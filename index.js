@@ -11,6 +11,19 @@ callbackExample(numberToMultiplicate, function (error, result, multiplicator) {
   }
 });
 
-return promiseExample(numberToMultiplicate)
+//  Executando promise
+promiseExample(numberToMultiplicate)
   .then((result) => console.log(result))
   .catch((error) => console.log(error));
+
+// Declaração da função com async
+async function asyncExample() {
+  try {
+    console.log(await promiseExample(stringToTestErrorHandle));
+  } catch(error) {
+    console.log(error);
+  }
+}
+
+// Execução da função
+asyncExample();
